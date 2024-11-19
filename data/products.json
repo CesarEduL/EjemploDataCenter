@@ -1,0 +1,136 @@
+{
+  "hdd": [
+    {
+      "name": "Seagate IronWolf Pro NAS HDD",
+      "basePrice": 129.99,
+      "features": [
+        "Optimizado para RAID",
+        "7200 RPM",
+        "Tecnología AgileArray",
+        "Ideal para RAID 1",
+        "5 años de garantía"
+      ],
+      "raidCompatibility": ["raid1"],
+      "link": "https://amazon.com/seagate-ironwolf-pro-nas-hdd"
+    },
+    {
+      "name": "Western Digital Red Pro NAS",
+      "basePrice": 134.99,
+      "features": [
+        "NASware 3.0",
+        "7200 RPM",
+        "Enhanced Reliability",
+        "Monitorio 3D Active Balance Plus",
+        "5 años de garantía"
+      ],
+      "raidCompatibility": ["raid1", "raid5"],
+      "link": "https://amazon.com/western-digital-red-pro-nas"
+    },
+    {
+      "name": "Toshiba N300 Pro NAS HDD",
+      "basePrice": 132.99,
+      "features": [
+        "7200 RPM",
+        "Cache de 256MB",
+        "RV Sensors para RAID",
+        "Diseñado para NAS empresarial",
+        "24/7 Reliability"
+      ],
+      "raidCompatibility": ["raid0", "raid1", "raid2"],
+      "link": "https://amazon.com/toshiba-n300-pro-nas-hdd"
+    },
+    {
+      "name": "HGST Ultrastar He10 HDD",
+      "basePrice": 199.99,
+      "features": [
+        "10TB de capacidad",
+        "Tecnología HelioSeal para eficiencia energética",
+        "Optimizado para configuraciones RAID 6",
+        "Clase empresarial con garantía de 5 años",
+        "Alta resistencia a vibraciones"
+      ],
+      "raidCompatibility": ["raid2", "raid6"],
+      "link": "https://amazon.com/hgst-ultrastar-he10-hdd"
+    },
+    {
+      "name": "Seagate BarraCuda Pro HDD",
+      "basePrice": 119.99,
+      "features": [
+        "5400 RPM para menor consumo",
+        "Cache de 256MB",
+        "Ideal para RAID 0",
+        "Tecnología Multi-Tier Caching",
+        "Garantía de 3 años"
+      ],
+      "raidCompatibility": ["raid0"],
+      "link": "https://amazon.com/seagate-barracuda-pro-hdd"
+    }
+  ],
+  "ssd": [
+    {
+      "name": "Samsung 870 PRO SATA SSD",
+      "basePrice": 169.99,
+      "features": [
+        "Velocidad de lectura 560MB/s",
+        "Tecnología V-NAND PRO",
+        "Optimizado para RAID 1",
+        "Samsung Magician Software",
+        "5 años de garantía"
+      ],
+      "raidCompatibility": ["raid1"],
+      "link": "https://amazon.com/samsung-870-pro-sata-ssd"
+    },
+    {
+      "name": "Crucial P5 Plus NVMe SSD",
+      "basePrice": 159.99,
+      "features": [
+        "PCIe 4.0 NVMe",
+        "Alta durabilidad",
+        "Micron Advanced 3D NAND",
+        "Encryption AES 256-bit",
+        "5 años de garantía"
+      ],
+      "raidCompatibility": ["raid0", "raid2", "raid5"],
+      "link": "https://amazon.com/crucial-p5-plus-nvme-ssd"
+    },
+    {
+      "name": "WD Black SN850X NVMe SSD",
+      "basePrice": 179.99,
+      "features": [
+        "PCIe Gen4 Technology",
+        "Fiabilidad empresarial",
+        "WD_BLACK Dashboard",
+        "Optimización térmica",
+        "5 años de garantía"
+      ],
+      "raidCompatibility": ["raid0"],
+      "link": "https://amazon.com/wd-black-sn850x-nvme-ssd"
+    },
+    {
+      "name": "Kingston KC3000 NVMe SSD",
+      "basePrice": 149.99,
+      "features": [
+        "Velocidad de lectura 7000MB/s",
+        "PCIe 4.0 con tecnología avanzada 3D TLC NAND",
+        "Alta durabilidad para RAID",
+        "Ideal para RAID 6",
+        "5 años de garantía"
+      ],
+      "raidCompatibility": ["raid6"],
+      "link": "https://amazon.com/kingston-kc3000-nvme-ssd"
+    },
+    {
+      "name": "Sabrent Rocket 4 Plus NVMe SSD",
+      "basePrice": 199.99,
+      "features": [
+        "Velocidad de lectura de 7400MB/s",
+        "Controlador Phison E18",
+        "Diseñado para RAID de alta velocidad",
+        "Optimización térmica avanzada",
+        "Garantía de 5 años con registro"
+      ],
+      "raidCompatibility": ["raid0", "raid2", "raid5"],
+      "link": "https://amazon.com/sabrent-rocket-4-plus-nvme-ssd"
+    }
+  ]
+}
