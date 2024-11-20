@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>RAID´s en Data Center - Simulador Interactivo</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="raid-container">
         <h1>Simulador Interactivo: RAID en Data Center</h1>
@@ -34,10 +36,11 @@
                 </div>
                 <div id="raid2Info" style="display: none;">
                     <h3>RAID 2 - Bit-Level Striping with Hamming Code</h3>
-                    <p>Distribuye los bits a través de varios discos y utiliza un código de paridad Hamming para recuperar datos en caso de fallo.</p>
+                    <p>Distribuye los bits a través de varios discos y utiliza un código de paridad Hamming para
+                        recuperar datos en caso de fallo.</p>
                 </div>
             </div>
-            
+
             <div class="control-panel">
                 <div class="button-group">
                     <button onclick="addDisk()">Agregar Disco</button>
@@ -82,95 +85,201 @@
             </div>
         </div>
         <div id="calculator" class="tab-content">
-    <div class="calculator">
-        <h2>Calculadora RAID Avanzada</h2>
-        
-        <div class="calculator-grid">
-            <div class="calculator-section">
-                <h3>Configuración Básica</h3>
-                <div class="input-group">
-                    <label>Tipo de RAID:</label>
-                    <select id="raidType" onchange="calculateRAID()">
-                        <option value="raid0">RAID 0 (Striping)</option>
-                        <option value="raid1">RAID 1 (Mirroring)</option>
-                        <option value="raid2">RAID 2 (Hamming)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Número de Discos:</label>
-                    <input type="number" id="numDisks" value="2" min="2" onchange="validateDisks()">
-                    <span class="help-text" id="diskHelp"></span>
-                </div>
-                <div class="input-group">
-                    <label>Capacidad por Disco (TB):</label>
-                    <input type="number" id="diskCapacity" value="1" min="0.1" step="0.1" onchange="calculateRAID()">
-                </div>
-                <div class="input-group">
-                    <label>Velocidad por Disco (MB/s):</label>
-                    <input type="number" id="diskSpeed" value="300" min="100" onchange="calculateRAID()">
-                </div>
-                <div class="input-group">
-                    <label>Tipo de Disco:</label>
-                    <select id="diskType" onchange="calculateRAID()">
-                        <option value="hdd">HDD</option>
-                        <option value="ssd">SSD</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Tipo de Carga de Trabajo:</label>
-                    <select id="workloadType" onchange="calculateRAID()">
-                        <option value="mixed">Mixta</option>
-                        <option value="sequential">Secuencial</option>
-                        <option value="random">Aleatoria</option>
-                    </select>
-                </div>
-            </div>
+            <div class="calculator">
+                <h2>Calculadora RAID Avanzada</h2>
 
-            <div class="calculator-section">
-                <h3>Resultados</h3>
-                <div class="results">
-                    <div class="result-card">
-                        <h4>Capacidad Total:</h4>
-                        <p id="calcCapacity">2 TB</p>
+                <div class="calculator-grid">
+                    <div class="calculator-section">
+                        <h3>Configuración Básica</h3>
+                        <div class="input-group">
+                            <label>Tipo de RAID:</label>
+                            <select id="raidType" onchange="calculateRAID()">
+                                <option value="raid0">RAID 0 (Striping)</option>
+                                <option value="raid1">RAID 1 (Mirroring)</option>
+                                <option value="raid2">RAID 2 (Hamming)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Número de Discos:</label>
+                            <input type="number" id="numDisks" value="2" min="2" onchange="validateDisks()">
+                            <span class="help-text" id="diskHelp"></span>
+                        </div>
+                        <div class="input-group">
+                            <label>Capacidad por Disco (TB):</label>
+                            <input type="number" id="diskCapacity" value="1" min="0.1" step="0.1"
+                                onchange="calculateRAID()">
+                        </div>
+                        <div class="input-group">
+                            <label>Velocidad por Disco (MB/s):</label>
+                            <input type="number" id="diskSpeed" value="300" min="100" onchange="calculateRAID()">
+                        </div>
+                        <div class="input-group">
+                            <label>Tipo de Disco:</label>
+                            <select id="diskType" onchange="calculateRAID()">
+                                <option value="hdd">HDD</option>
+                                <option value="ssd">SSD</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Tipo de Carga de Trabajo:</label>
+                            <select id="workloadType" onchange="calculateRAID()">
+                                <option value="mixed">Mixta</option>
+                                <option value="sequential">Secuencial</option>
+                                <option value="random">Aleatoria</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="result-card">
-                        <h4>Velocidad de Lectura:</h4>
-                        <p id="calcReadSpeed">600 MB/s</p>
-                    </div>
-                    <div class="result-card">
-                        <h4>Velocidad de Escritura:</h4>
-                        <p id="calcWriteSpeed">300 MB/s</p>
-                    </div>
-                    <div class="result-card">
-                        <h4>IOPS Estimados:</h4>
-                        <p id="calcIOPS">100K</p>
-                    </div>
-                    <div class="result-card">
-                        <h4>Confiabilidad:</h4>
-                        <p id="calcReliability">99.8%</p>
-                    </div>
-                    <div class="result-card">
-                        <h4>Tolerancia a Fallos:</h4>
-                        <p id="calcFaultTolerance">N/A</p>
+
+                    <div class="calculator-section">
+                        <h3>Resultados</h3>
+                        <div class="results">
+                            <div class="result-card">
+                                <h4>Capacidad Total:</h4>
+                                <p id="calcCapacity">2 TB</p>
+                            </div>
+                            <div class="result-card">
+                                <h4>Velocidad de Lectura:</h4>
+                                <p id="calcReadSpeed">600 MB/s</p>
+                            </div>
+                            <div class="result-card">
+                                <h4>Velocidad de Escritura:</h4>
+                                <p id="calcWriteSpeed">300 MB/s</p>
+                            </div>
+                            <div class="result-card">
+                                <h4>IOPS Estimados:</h4>
+                                <p id="calcIOPS">100K</p>
+                            </div>
+                            <div class="result-card">
+                                <h4>Confiabilidad:</h4>
+                                <p id="calcReliability">99.8%</p>
+                            </div>
+                            <div class="result-card">
+                                <h4>Tolerancia a Fallos:</h4>
+                                <p id="calcFaultTolerance">N/A</p>
+                            </div>
+                        </div>
+                        <div id="raidWarning" class="warning-card">
+                            <div class="warning-icon">⚠️</div>
+                            <p id="warningText"></p>
+                        </div>
                     </div>
                 </div>
-                <div id="raidWarning" class="warning-card">
-                    <div class="warning-icon">⚠️</div>
-                    <p id="warningText"></p>
+
+                <div class="product-recommendations">
+                    <h3>Productos Recomendados</h3>
+                    <div id="productList" class="product-grid"></div>
                 </div>
             </div>
         </div>
 
-        <div class="product-recommendations">
-            <h3>Productos Recomendados</h3>
-            <div id="productList" class="product-grid"></div>
+        <div id="cloud" class="tab-content">
+            <div class="cloud-container">
+                <h2>Simulación de Almacenamiento Cloud</h2>
+
+                <div class="cloud-type-selector">
+                    <button class="cloud-button active" onclick="switchCloudType('public')">Cloud Público</button>
+                    <button class="cloud-button" onclick="switchCloudType('private')">Cloud Privado</button>
+                    <button class="cloud-button" onclick="switchCloudType('hybrid')">Cloud Híbrido</button>
+                </div>
+
+                <div class="cloud-info-panel">
+                    <div class="cloud-config">
+                        <h3>Configuración</h3>
+                        <div class="config-group">
+                            <label>Capacidad Total (TB):</label>
+                            <input type="number" id="cloudCapacity" value="10" min="1" onchange="updateCloudMetrics()">
+                        </div>
+                        <div class="config-group">
+                            <label>Nivel de Redundancia:</label>
+                            <select id="redundancyLevel" onchange="updateCloudMetrics()">
+                                <option value="2">2x (Similar a RAID 1)</option>
+                                <option value="3">3x (Alta disponibilidad)</option>
+                                <option value="geo">Geo-redundante</option>
+                            </select>
+                        </div>
+                        <div class="config-group">
+                            <label>Ubicaciones:</label>
+                            <select id="locations" multiple size="3">
+                                <option value="us-east">US East</option>
+                                <option value="us-west">US West</option>
+                                <option value="eu-central">EU Central</option>
+                                <option value="asia-pacific">Asia Pacific</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cloud-metrics">
+                        <div class="metric-card">
+                            <h4>Costos Estimados</h4>
+                            <div id="costMetrics">
+                                <p>Almacenamiento: $<span id="storageCost">0</span>/mes</p>
+                                <p>Transferencia: $<span id="transferCost">0</span>/mes</p>
+                                <p>Total: $<span id="totalCost">0</span>/mes</p>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Rendimiento</h4>
+                            <div id="performanceMetrics">
+                                <p>Latencia: <span id="latency">0</span> ms</p>
+                                <p>IOPS: <span id="cloudIops">0</span></p>
+                                <p>Throughput: <span id="throughput">0</span> MB/s</p>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Disponibilidad</h4>
+                            <div id="availabilityMetrics">
+                                <p>SLA: <span id="sla">99.99</span>%</p>
+                                <p>RPO: <span id="rpo">0</span> min</p>
+                                <p>RTO: <span id="rto">0</span> min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cloud-visualization">
+                    <div class="cloud-map" id="cloudMap">
+                        <!-- El mapa se generará dinámicamente -->
+                    </div>
+                    <div class="data-flow-visualization" id="dataFlow">
+                        <!-- La visualización del flujo de datos se generará dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="cloud-comparison">
+                    <h3>Comparativa de Servicios Cloud</h3>
+                    <table id="cloudComparison">
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Cloud Público</th>
+                                <th>Cloud Privado</th>
+                                <th>Cloud Híbrido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Control</td>
+                                <td>Limitado</td>
+                                <td>Total</td>
+                                <td>Mixto</td>
+                            </tr>
+                            <tr>
+                                <td>Escalabilidad</td>
+                                <td>Alta</td>
+                                <td>Media</td>
+                                <td>Alta</td>
+                            </tr>
+                            <tr>
+                                <td>Costo Inicial</td>
+                                <td>Bajo</td>
+                                <td>Alto</td>
+                                <td>Medio</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-    <div id="cloud" class="tab-content">
-
-    </div>
 
         <div id="performance" class="tab-content">
             <h2>Análisis de Rendimiento</h2>
@@ -202,7 +311,12 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-</div>
+    <script src="js/raid.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/simulation.js"></script>
+    <script src="js/cloud.js"></script>
+
+    </div>
 </body>
+
 </html>
